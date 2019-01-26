@@ -24,3 +24,4 @@ head(dset2)
 
 ###Frequency Distribution for 'Race'
 ggplot(data=dset2,aes(x=dset2$race,fill=dset2$income))+geom_bar()
+

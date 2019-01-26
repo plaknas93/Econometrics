@@ -18,6 +18,7 @@ pairs(data)
 library(ggplot2)
 library(GGally)
 ggpairs(data)
+mean(data$Sensex)
 
 stem(data$Ftse)
 
