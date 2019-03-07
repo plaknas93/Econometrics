@@ -14,7 +14,8 @@ cbind(maxDate,minDate)
 
 ## Choosing banks
 banks=c("SBIN.NS","BANKBARODA.NS","BANKINDIA.NS","ALBK.NS","ANDHRABANK.NS","CANBK.NS","CORPBANK.NS","DENABANK.NS","IDBI.NS","IOB.NS","ORIENTBANK.NS","PNB.NS","SYNDIBANK.NS","UCOBANK.NS","UNIONBANK.NS","VIJAYABANK.NS","AXISBANK.NS","CUB.NS","FEDERALBNK.NS","HDFCBANK.NS","ICICIBANK.NS","INDUSINDBK.NS","J&KBANK.BO","KTKBANK.BO","KARURVYSYA.NS","KOTAKBANK.BO","LAKSHVILAS.NS","SOUTHBANK.NS")
-
+banks
+summary(banks)
 ## Calculating VaR        
 bankVaR=0
 y=0
@@ -37,8 +38,12 @@ for(i in 1:15)
 }
 
 names(y)=banks
-year=seq(from=2004,to=2018,by=1)
-data=data.frame(year,y)
+year=seq(from=20.04,to=20.18,by=0.01)
+dat=data.frame(year,y)
+head(dat)
+
+data=round(dat*100,digits=2)
+head(data)
 data
 
 write.csv(data,file='VaR_all_banks.csv')
