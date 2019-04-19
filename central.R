@@ -9,9 +9,11 @@ p_std=sd(data)
 p_std
 s=0
 m=0
-for(i in 1:10000)
+sam_var=0
+for(i in 1:1000)
 {
     ss=sample(data,30)
+    sam_var[i]=sd(ss)
     s[i]=list(ss)
 }
 
@@ -20,18 +22,22 @@ s[1]
 sam1= as.numeric(unlist(s[1]))
 sam1
 mean(sam1)
+sam_var
 
 names(s)=1:10000
 s1500=data.frame(s)
 s1500
+head(s1500)
 write.csv(s50,file='central_limit_thm.csv')
 
 samdist=colMeans(s1500)
+
 
 samdist 
 plot(samdist)
 
 hist(samdist)
+hist(sam_var)
 library(ggplot2)
 x=1:10000
 d=data.frame(x,samdist)
