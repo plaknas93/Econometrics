@@ -72,3 +72,20 @@ PF_var #Calculated value
 library('PortfolioAnalytics')
 z=var.portfolio(R = data,weights = c(1/3,1/3,1/3))
 round(z*100,2)
+
+#The mean variance efficient frontier
+w
+pf_ret= round(((w[1,1]*t) + (w[2,1]*j) + (w[3,1]*s))*100,2)
+pf_ret
+head(pf_ret)
+tail(pf_ret)
+C=matrix(round(cov(data)*100,2),nrow=3,byrow = T)
+C
+avg_t=round(mean(t)*100,2)
+avg_t
+avg_s=round(mean(s)*100,2)
+avg_s
+avg_j=round(mean(j)*100,2)
+avg_j
+prm=matrix(c(avg_t,avg_s,avg_t),nrow = 3)
+prm
